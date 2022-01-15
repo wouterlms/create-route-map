@@ -55,7 +55,7 @@ export default (options: Options) => {
   }
 
   const createOutputFile = () => {
-    const output = template(routeNames)
+    const output = template(routeNames.sort((a, b) => a > b ? 1 : -1))
     writeFileSync(outputPath, output)
   }
 

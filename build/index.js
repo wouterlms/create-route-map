@@ -38,7 +38,7 @@ exports.default = (options) => {
         });
     };
     const createOutputFile = () => {
-        const output = (0, template_1.default)(routeNames);
+        const output = (0, template_1.default)(routeNames.sort((a, b) => a > b ? 1 : -1));
         (0, fs_1.writeFileSync)(outputPath, output);
     };
     const sync = () => {
