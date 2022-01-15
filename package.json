@@ -1,0 +1,29 @@
+{
+  "name": "@wouterlms/create-route-map",
+  "version": "1.0.0",
+  "description": "Svg transformer",
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "start": "node -r ts-node/register ./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wouterlms/create-route-map.git"
+  },
+  "author": "Wouter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wouterlms/create-route-map/issues"
+  },
+  "homepage": "https://github.com/wouterlms/create-route-map#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.8",
+    "ts-node": "3.3.0",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "recursive-watch": "^1.1.4"
+  }
+}
