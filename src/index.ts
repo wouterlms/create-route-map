@@ -4,10 +4,10 @@ import {
   statSync,
   existsSync,
   writeFileSync,
+  watch,
 } from 'fs'
 import { join, basename, dirname } from 'path'
 
-import watch from 'recursive-watch'
 import template from './template'
 
 interface Options {
@@ -15,7 +15,7 @@ interface Options {
   outputPath: string
 }
 
-export default(options: Options) => {
+export default (options: Options) => {
   const { basePath, outputPath } = options
 
   let routeNames = []
@@ -69,7 +69,7 @@ export default(options: Options) => {
     name: 'create-route-map',
     config(_, { command }) {
       if (command === 'serve') {
-        watch(basePath, (filePath) => {
+        watch(basePath, { recursive: true }, (_, filePath) => {
           const parentDir = basename(dirname(filePath))
       
           if (parentDir === 'router') {
